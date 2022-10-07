@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:wheat;
+}
+
+/* home css */
+
+#mainhome{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#toph1{
+    text-align: center;
+    color: darkblue;
+    font-style: italic;
+    /* text-decoration: underline double red; */
+    text-shadow: 2px 2px 2px rgb(203, 59, 59);
+}
+
+#spanhome{
+    color: black;
+}
+
+
+
+/* syle to silde bar start */
+#ulhome{
+    position: absolute;
+    left: -90px;
+    transition: 0.3s;
+    padding: 20px;
+    width: 120px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+
+}
+
+#ulhome:hover {
+        left: 0;
+      }
+
+
+      
+#h2home {
+    top: 20px;
+    background-color: #04AA6D;
+  }
+  
+  #h2archive {
+    top: 80px;
+    background-color: #2196F3;
+  }
+  
+  #h2delete {
+    top: 140px;
+    background-color: #f44336;
+  }
+  
+/* style to sidebar end  */
+
+
+#areaHome{
+    margin-top: 10%;
+    text-align: center;
+}
+
+#txtbox{
+    color:darkslategrey;
+    background-color:wheat;
+    font-style: italic;
+    border: none;
+    width: 20%;
+    height: 20%;
+}
+#btnhome{
+    margin-top: 2%;
+    margin-left: 18%;
+    font-style: italic;
+    border-radius: 5px;
+    /* border: none; */
+}
+
+#bMapHome{
+    margin-top: 1%;
+    border: solid;
+}
+#h3txt{
+    font-style: italic;
+    font-size: 2em;
+    text-decoration:underline double #2196F3;
+    text-align: center;
+}
+
+#p{
+    margin-left: 2em;
+    font-style: italic;
+    color:rgb(59, 58, 58);
+}
+
+#aMapHome{
+    margin-left: 2em;
+    
+}

@@ -1,21 +1,31 @@
 import React,{useContext} from "react";
-import {useNavigate} from "react-router-dom"
 import {UserContext} from "../App"
 
 
 
 
 function Delete(){
-    const navigate=useNavigate()
 
-    const {noteSave,setNoteSave,archiveNote,setArchiveNote,deleteNote,setDeleteNote}=useContext(UserContext)
+    const {deleteNote}=useContext(UserContext)
 
 
 
     return(
-        <div>
-            <h4 onClick={()=>navigate("/")}>Home</h4>
+        <div id="maindelete">
             <h1>Deteled Area</h1>
+
+            {deleteNote.map((note)=>{
+            return(
+                <div id="mapdelete">
+                    {note}
+                    <br/>
+  
+                </div>
+            )
+        })
+    }
+
+
         </div>
     )
 }

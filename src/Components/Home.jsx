@@ -6,51 +6,54 @@ import {UserContext} from "../App"
 function Home(){
 const[txtArea,setTxtArea]=useState([])
 
-    const {noteSave,setNoteSave,archiveNote,setArchiveNote,deleteNote,setDeleteNote}=useContext(UserContext)
-    // console.log(noteSave,setNoteSave,archiveNote,setArchiveNote,deleteNote,setDeleteNote);
-
-    // const{noteSave,setNoteSave}=useContext(UserContext)
-    // console.log(setArchiveNote);
-
+    const {noteSave,setNoteSave,setArchiveNote,setDeleteNote}=useContext(UserContext)
+    
 
     const navigate=useNavigate()
 
     const saveEnt=()=>{setNoteSave((prev)=>[...prev,txtArea]);}
 
-    const deleteEnt=()=>{console.log("delte");}
+    const archiveEnt=(note)=>{setArchiveNote((prev)=>[...prev,note])}
+
+    const deleteEnt=(note)=>{setDeleteNote((prev)=>[...prev,note])}
 
 
     return(
-        <div>
-<nav>
-    <ul>
-        <li onClick={()=>navigate("/")}>Home</li>
-        <li onClick={()=>navigate("/archive")}>Archive</li>
-        <li onClick={()=>navigate("/delete")}>Delete</li>
-    </ul>
-</nav>
+        <div id="mainhome">
 
-<div>
-    <textarea placeholder="Write your notes" onChange={(e)=>setTxtArea(e.target.value)}></textarea><br/>
-    <button onClick={saveEnt}>Save</button>{" "}{" "}
+    <div id="ulhome">
+        <h2 id="h2home" onClick={()=>navigate("/")}>Home</h2>
+        <h2 id="h2archive" onClick={()=>navigate("/archives")}>Archive</h2>
+        <h2 id="h2delete"onClick={()=>navigate("/delete")}>Delete</h2>
+    </div>
+
+
+<div id="divhome">
+    <div id="areaHome">
+    <textarea id='txtbox' placeholder="Write your notes" onChange={(e)=>setTxtArea(e.target.value)}></textarea><br/>
+    <button id='btnhome'onClick={saveEnt}>Save</button>{" "}{" "}
+    </div>
+    <div id="bMapHome">
+    <h3 id="h3txt">Your Notes</h3>
+    <p id="p">If there's a book that you want to read,<br/>
+        but it hasn't been written yet,<br/> 
+        then you must write it</p>
+
     {noteSave.map((note)=>{
             return(
-                <div>
+                <div id="aMapHome">
                     {note}
                     <br/>
-    <button onClick={()=>{setArchiveNote([note])}}>Archive</button>{" "}{" "}
-    <button onClick={deleteEnt}>Delete</button>{" "}{" "}
+    <button onClick={()=>archiveEnt(note)}>Archive</button>{" "}{" "}
+    <button onClick={()=>deleteEnt(note)}>Delete</button>{" "}{" "}
 
                 </div>
             )
         })
     }
+    </div>
 
 </div>
-<div>
-    <h3>Your Notes</h3>
-    <p>{noteSave}</p>
-    </div>
 
         </div>
     )
